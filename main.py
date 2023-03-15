@@ -1,8 +1,10 @@
-# File created by: Rocco Reginelli
+# File created by: Chris Cozort
 
-#test
-
+# testing changes with this line...more editssss....
+# asdfasdfasdfasdfasdf;skdjf;lkasjdf;lkasjd;flkjasdf;lk
+# ;ALSKJDF;LKASJDF;KLJASD;FLKJAS;DKLFJ
 # import libraries
+# test comment for git
 import pygame as pg
 import random
 import os
@@ -20,7 +22,7 @@ def get_mouse_now():
     return (x,y)
 
 
-# init pg and create window
+# init pg and create windowo
 pg.init()
 # init sound mixer
 pg.mixer.init()
@@ -35,6 +37,7 @@ pewpews = pg.sprite.Group()
 # player is instantiated here
 player = Player()
 invader = Mob()
+invader.vel.x = 5
 
 # testSprite = Sprite()
 # testSprite.image = pg.Surface((50,50))
