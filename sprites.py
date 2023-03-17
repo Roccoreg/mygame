@@ -1,4 +1,4 @@
-# File created by: Chris Cozort
+# File created by: Rocco Reginelli
 
 import pygame as pg
 
@@ -58,9 +58,11 @@ class Mob(Sprite):
         self.cofric = 0.1
         self.canjump = False
     def behavior(self):
-        if self.rect.x > WIDTH:
-            self.vel.x *= -1
+        if self.rect.x > WIDTH or self.rect.x < 0 or self.rect.y > HEIGHT or self.rect.y < 0:
+            self.vel *= -1
+
     def update(self):
         self.behavior()
         self.pos += self.vel
         self.rect.center = self.pos
+    
