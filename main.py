@@ -39,6 +39,7 @@ pewpews = pg.sprite.Group()
 # player is instantiated here
 player = Player()
 invader = Mob()
+invader.fill((0,0,255))
 invader.vel = vec(randint(1,8),randint(1,8))
 
 
