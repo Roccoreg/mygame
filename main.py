@@ -44,6 +44,8 @@ invader.vel = vec(randint(1,8),randint(1,8))
 
 for i in range(0,10):
     m = Mob()
+    #instance of the class
+    #Class is the mold that makes the things
     m.vel = vec(randint(1,8),randint(1,8))
     all_sprites.add(m)
     enemies.add(m)
@@ -73,6 +75,7 @@ while RUNNING:
     all_sprites.update()
 
     blocks_hit_list = pg.sprite.spritecollide(player, enemies, False)
+    # if it collides return a value, returns a list
     for block in blocks_hit_list:
         print(enemies)
         pass
