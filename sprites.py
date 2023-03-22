@@ -8,12 +8,14 @@ from settings import *
 
 vec = pg.math.Vector2
 
+
 # create a player
 
 class Player(Sprite):
     def __init__(self):
         Sprite.__init__(self)
         self.image = pg.Surface((50,50))
+        self.image = pg.transform.scale((50, 38))
         self.image.fill(BLACK)
         self.rect = self.image.get_rect()
         self.pos = vec(WIDTH/2, HEIGHT/2)
@@ -65,4 +67,4 @@ class Mob(Sprite):
         self.behavior()
         self.pos += self.vel
         self.rect.center = self.pos
-    
+        
