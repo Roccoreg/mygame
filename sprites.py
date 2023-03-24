@@ -12,10 +12,11 @@ vec = pg.math.Vector2
 # create a player
 
 class Player(Sprite):
-    def __init__(self):
+    def __init__(self, game):
         Sprite.__init__(self)
+        self.game = game
         self.image = pg.Surface((50,50))
-        self.image = pg.transform.scale((50, 38))
+        # self.image = pg.transform.scale((50, 38))
         self.image.fill(BLACK)
         self.rect = self.image.get_rect()
         self.pos = vec(WIDTH/2, HEIGHT/2)
@@ -33,6 +34,13 @@ class Player(Sprite):
             self.acc.y = PLAYER_ACC
         if keystate[pg.K_d]:
             self.acc.x = PLAYER_ACC
+    # def jump(self):
+    #     # jump only if standing on a platform
+    #     self.rect.x += 1
+    #     hits = pg.sprite.spritecollide(self, self.game.platforms, False)
+    #     self.rect.x -= 1
+    #     if hits:
+    #         self.vel.y = -PLAYER_JUMP
     def update(self):
         self.acc = self.vel * PLAYER_FRICTION
         self.input()
