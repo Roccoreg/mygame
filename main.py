@@ -11,7 +11,12 @@
 # Sources: 
 
 '''
-My Goal is:
+My goal is:
+
+create a mobs that make player bounce back after he is hit
+create an ability that a player can obtain
+Reach goal:
+have player disapear after it is hit by a mob
 
 '''
 
@@ -21,6 +26,8 @@ import os
 # import settings 
 from settings import *
 from sprites import *
+from math import *
+from math import ceil
 # from pg.sprite import Sprite
 
 # set up assets folders
@@ -79,8 +86,15 @@ class Game:
             if event.type == pg.KEYDOWN:
                 if event.key == pg.K_SPACE:
                     self.player.jump()
-    def update(self):
+def update(self):
         self.all_sprites.update()
+        mhits = pg.sprite.spritecollide(self.player, self.enemies, False)
+        if mhits:
+            if abs(self.player.vel.x) > abs(self.player.vel.y):
+                self.player.vel.x *= -1
+            else:
+                self.player.vel.y *= -1
+            
         if self.player.vel.y > 0:
             hits = pg.sprite.spritecollide(self.player, self.platforms, False)
             if hits:
