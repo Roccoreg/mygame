@@ -74,6 +74,10 @@ class Player(Sprite):
         self.input()
         self.vel += self.acc
         self.pos += self.vel + 0.5 * self.acc
+        if self.pos.x < 0:
+            self.pos.x = 0
+        if self.pos.x > WIDTH:
+            self.pos.x = WIDTH
         self.rect.midbottom = self.pos
 
 class Mob(Sprite):

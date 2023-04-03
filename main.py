@@ -76,7 +76,6 @@ class Game:
             self.events()
             self.update()
             self.draw()
-    
     def events(self):
         for event in pg.event.get():
             if event.type == pg.QUIT:
@@ -86,7 +85,7 @@ class Game:
             if event.type == pg.KEYDOWN:
                 if event.key == pg.K_SPACE:
                     self.player.jump()
-def update(self):
+    def update(self):
         self.all_sprites.update()
         mhits = pg.sprite.spritecollide(self.player, self.enemies, False)
         if mhits:
@@ -94,7 +93,6 @@ def update(self):
                 self.player.vel.x *= -1
             else:
                 self.player.vel.y *= -1
-            
         if self.player.vel.y > 0:
             hits = pg.sprite.spritecollide(self.player, self.platforms, False)
             if hits:
@@ -106,7 +104,6 @@ def update(self):
                 else:
                     self.player.pos.y = hits[0].rect.top
                     self.player.vel.y = 0
-
     def draw(self):
         self.screen.fill(BLUE)
         self.all_sprites.draw(self.screen)
