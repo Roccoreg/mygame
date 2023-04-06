@@ -43,7 +43,7 @@ class Player(Sprite):
         #         print(PAUSED)
     # ...
     def jump(self):
-        self.rect.x += 1
+        self.rect.x += .5
         hits = pg.sprite.spritecollide(self, self.game.platforms, False)
         self.rect.x -= 1
         if hits:
@@ -73,7 +73,7 @@ class Player(Sprite):
         self.acc.x = self.vel.x * PLAYER_FRICTION
         self.input()
         self.vel += self.acc
-        self.pos += self.vel + 0.5 * self.acc
+        self.pos += self.vel + 0.4 * self.acc
         if self.pos.x < 0:
             self.pos.x = 0
         if self.pos.x > WIDTH:
@@ -92,7 +92,7 @@ class Mob(Sprite):
         self.rect.center = (WIDTH/2, HEIGHT/2)
         self.pos = vec(WIDTH/2, HEIGHT/2)
         self.vel = vec(randint(1,5),randint(1,5))
-        self.acc = vec(1,1)
+        self.acc = vec(3,3)
         self.cofric = 0.01
     # ...
     def inbounds(self):
