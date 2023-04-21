@@ -7,7 +7,7 @@ from random import randint
 
 
 vec = pg.math.Vector2
-
+ 
 # player class
 
 class Player(Sprite):

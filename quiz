@@ -1,0 +1,15 @@
+# Functions
+# add_numbers is where the function is named/defined (not def)
+# parameters (x,y)
+
+def add_numbers(x,y): 
+    z = x + y
+    return z
+# add_numbers(3,4) is where the function is called...
+print(add_numbers(3,4))
+
+# you need to call fucntion for it to do anything
+
+
+
+
